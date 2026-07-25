@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowUpRight, Plus } from 'lucide-react'
 import { NAV_LINKS, THUMBNAILS, PRICE, FAQS, SOCIALS } from './content'
 import { useReveal } from './components/ui'
+import { Fx } from './components/Fx'
 import Threads from './components/Threads'
 import Aurora from './components/Aurora'
 
@@ -76,7 +77,9 @@ function Hero() {
   return (
     <section id="top" ref={ref} className="relative flex min-h-screen flex-col overflow-hidden">
       <div className="absolute inset-0 opacity-60">
-        <Threads color={[0.96, 0.92, 0.82]} amplitude={1} distance={0.35} enableMouseInteraction={false} />
+        <Fx>
+          <Threads color={[0.96, 0.92, 0.82]} amplitude={1} distance={0.35} enableMouseInteraction={false} />
+        </Fx>
       </div>
       <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.12]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-base" />
@@ -179,7 +182,9 @@ function Statement() {
     <section id="process" ref={ref} className="relative overflow-hidden border-y border-line bg-panel px-5 py-24 md:px-8 md:py-36">
       {/* faint animated veil for depth — dark burnt-orange, distinct from the contact aurora */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.4]">
-        <Aurora colorStops={['#3a1607', '#ff5c1c', '#3a1607']} amplitude={0.7} blend={0.4} speed={0.35} />
+        <Fx>
+          <Aurora colorStops={['#3a1607', '#ff5c1c', '#3a1607']} amplitude={0.7} blend={0.4} speed={0.35} />
+        </Fx>
       </div>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-panel/75 via-panel/45 to-panel/75" />
 
@@ -274,7 +279,9 @@ function Contact() {
   return (
     <section id="contact" ref={ref} className="relative overflow-hidden border-t border-line">
       <div className="absolute inset-0 opacity-80">
-        <Aurora colorStops={['#ff5c1c', '#ff9d52', '#ff5c1c']} amplitude={0.9} blend={0.6} speed={0.6} />
+        <Fx>
+          <Aurora colorStops={['#ff5c1c', '#ff9d52', '#ff5c1c']} amplitude={0.9} blend={0.6} speed={0.6} />
+        </Fx>
       </div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_45%,transparent_5%,rgba(10,10,10,0.6)_68%,#0a0a0a_100%)]" />
       <div className="bg-noise pointer-events-none absolute inset-0 opacity-[0.14] mix-blend-overlay" />
